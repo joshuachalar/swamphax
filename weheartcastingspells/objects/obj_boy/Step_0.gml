@@ -45,11 +45,11 @@ if (keyboard_check(ord("Y"))){
 }
 
 if (wind_timer > 0) {
-    move_speed = normal_speed * 0.3;
+    HORIZONTAL_GROUND_FORCE_ON_KEY = 0.9;
     wind_timer--;
 }
 else {
-    move_speed = normal_speed;
+    HORIZONTAL_GROUND_FORCE_ON_KEY = 2.5;
 }
 
 //fire
@@ -107,10 +107,15 @@ velocity[1] += acceleration[1]
 x += velocity[0]
 y += velocity[1]
 
-var collider = instance_place(x, y + 1, obj_platform)
-if (collider) {
+var collider1 = instance_place(x, y + 1, obj_platform)
+var collider2 = instance_place(x, y + 1, obj_jump)
+if (collider1 || collider2) {
 	velocity[1] = 0
-	y = collider.y - sprite_height + 1;
+	if (collider1){
+		y = collider1.y - sprite_height + 1;
+	}else{
+		y = collider2.y - sprite_height + 1;
+	}
 	is_on_ground = true
 	slam_available = true
 	in_slam = false
@@ -118,6 +123,7 @@ if (collider) {
 else {
 	is_on_ground = false	
 }
+
 
 if (not is_on_ground) {
 	if (velocity[0] < 0) {
@@ -143,4 +149,10 @@ else {
 			sprite_index = boy_right_jump
 		}
 	}
+}
+
+
+if (y > 700){
+	x = 50
+	y = 350
 }
