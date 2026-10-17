@@ -13,12 +13,14 @@
     {"$GMFolder":"","%Name":"objects","folderPath":"folders/objects.yy","name":"objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sprites","folderPath":"folders/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "defaultScriptType":1,
+  "Folders":[],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"weheartcastingspells",
   "resources":[
