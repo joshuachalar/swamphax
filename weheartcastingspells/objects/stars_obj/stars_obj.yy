@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"stars_sprite",
-    "path":"sprites/stars_sprite/stars_sprite.yy",
+    "name":"spr_stars",
+    "path":"sprites/spr_stars/spr_stars.yy",
   },
   "spriteMaskId":null,
   "visible":true,
