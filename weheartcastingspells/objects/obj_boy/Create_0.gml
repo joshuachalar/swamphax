@@ -21,9 +21,10 @@ gravity_rev = false;
 
 lightning = false;
 
+HORIZONTAL_GROUND_FORCE_ON_KEY = 2.5;
+HORIZONTAL_AIR_FORCE_ON_KEY = 0.2;
+
 draw_healthbar(100, 100, 100, 100, 100, c_orange, c_red, c_green, 1, true, true);
-#macro HORIZONTAL_GROUND_FORCE_ON_KEY 1
-#macro HORIZONTAL_AIR_FORCE_ON_KEY 0.2
 #macro VERTICAL_FORCE_ON_JUMP 12
 #macro VERTICAL_FORCE_ON_SLAM 8.
 #macro HORIZONTAL_FORCE_DAMP_WHILE_SLAM_MULT 0.2
