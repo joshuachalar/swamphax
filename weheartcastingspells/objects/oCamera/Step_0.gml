@@ -15,8 +15,8 @@ var goal_position = [
 ]
 
 var goal_size = [
-	old_size[0], 
-	old_size[1]
+	view_wport[0] / 1.7, 
+	view_hport[1] / 1.7
 ]
 
 var new_position = [
