@@ -32,7 +32,7 @@ draw_healthbar(100, 100, 100, 100, 100, c_orange, c_red, c_green, 1, true, true)
 #macro HORIZONTAL_GROUND_FRICTION_COEFFICIENT 0.25
 #macro HORIZONTAL_AIR_FRICTION_COEFFICIENT 0.05
 #macro HORIZONTAL_FORCE_BOOST_ON_JUMP_ADD 2.5
-#macro VELOCITY_EPSILON 0.05
+#macro VELOCITY_EPSILON 0.1
 
 mass = 1.
 velocity = [0., 0.]

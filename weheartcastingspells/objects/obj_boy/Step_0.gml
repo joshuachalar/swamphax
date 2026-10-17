@@ -1,8 +1,8 @@
 if (abs(velocity[0]) < VELOCITY_EPSILON) {
-	velocity[0] = 0
+	velocity[0] = 0.
 }
 if (abs(velocity[1]) < VELOCITY_EPSILON) {
-	velocity[1] = 0
+	velocity[1] = 0.
 }
 
 var dir = [
@@ -112,5 +112,3 @@ if (collider) {
 else {
 	is_on_ground = false	
 }
-
-// TD press S to slam, bounces? movement boost? 
