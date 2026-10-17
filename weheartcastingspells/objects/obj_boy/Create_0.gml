@@ -22,7 +22,6 @@ gravity_rev = false;
 lightning = false;
 
 
-
 draw_healthbar(100, 100, 100, 100, 100, c_orange, c_red, c_green, 1, true, true);
 #macro HORIZONTAL_FORCE_ON_KEY 1.
 #macro VERTICAL_FORCE_ON_JUMP 12
