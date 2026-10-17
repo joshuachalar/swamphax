@@ -10,13 +10,13 @@ var old_size = [
 ]
 
 var goal_position = [
-	obj_boy.x - old_size[0] / 2, 
-	obj_boy.y - old_size[1] / 2
+	42 * obj_boy.velocity[0] + obj_boy.x - old_size[0] / 2, 
+	20 * obj_boy.velocity[1] + obj_boy.y - old_size[1] / 2
 ]
 
 var new_position = [
-	lerp(old_position[0], goal_position[0], 0.1), 
-	lerp(old_position[1], goal_position[1], 0.1)
+	lerp(old_position[0], goal_position[0], 0.06), 
+	lerp(old_position[1], goal_position[1], 0.02)
 ]
 
 camera_set_view_pos(view_camera[0], new_position[0], new_position[1])
