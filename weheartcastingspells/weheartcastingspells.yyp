@@ -16,7 +16,9 @@
     {"$GMFolder":"","%Name":"boy","folderPath":"folders/sprites/boy.yy","name":"boy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"tilesets","folderPath":"folders/tilesets.yy","name":"tilesets","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "ForcedPrefabProjectReferences":[],
+  "ForcedPrefabProjectReferences":[
+    {"link":"io.gamemaker.gm_filter_gradient-1.0.0","name":"io.gamemaker.gm_filter_gradient-1.0.0","path":"io.gamemaker.gm_filter_gradient-1.0.0.yyp",},
+  ],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
@@ -27,6 +29,8 @@
   "resources":[
     {"id":{"name":"obj_boy","path":"objects/obj_boy/obj_boy.yy",},},
     {"id":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},},
+    {"id":{"name":"randomstarspawner","path":"objects/randomstarspawner/randomstarspawner.yy",},},
+    {"id":{"name":"stars_obj","path":"objects/stars_obj/stars_obj.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"boy_down","path":"sprites/boy_down/boy_down.yy",},},
     {"id":{"name":"boy_left_jump","path":"sprites/boy_left_jump/boy_left_jump.yy",},},
@@ -37,6 +41,7 @@
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},},
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},},
     {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},},
+    {"id":{"name":"stars_sprite","path":"sprites/stars_sprite/stars_sprite.yy",},},
     {"id":{"name":"hori_tileset","path":"tilesets/hori_tileset/hori_tileset.yy",},},
   ],
   "resourceType":"GMProject",
