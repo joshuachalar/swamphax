@@ -37,3 +37,7 @@ mass = 1.
 velocity = [0., 0.]
 
 is_on_ground = false
+slam_available = true
+in_slam = false
+facing = 0  // 0 = forwards, -1 = left, 1 = right
+
