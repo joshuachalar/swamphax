@@ -1,3 +1,5 @@
+
+
 if (abs(velocity[0]) < VELOCITY_EPSILON) {
 	velocity[0] = 0.
 }
@@ -12,6 +14,10 @@ var dir = [
 // TD rename to key dir
 
 var force = [0., 0.]
+
+if (dir[0] != 0) {
+	facing = dir[0]
+}
 
 if (dir[0] != 0) {
 	if (is_on_ground) {
@@ -111,4 +117,30 @@ if (collider) {
 }
 else {
 	is_on_ground = false	
+}
+
+if (not is_on_ground) {
+	if (velocity[0] < 0) {
+		sprite_index = boy_left_jump
+	}
+	if (velocity[0] > 0) {
+		sprite_index = boy_right
+	}
+}
+else {
+	if (facing == 0) {
+		sprite_index = boy_sprite
+	}
+	else {
+		if (velocity[0] == 0) {
+			image_index = 0
+		}
+		
+		if (facing < 0) {
+			sprite_index = boy_left
+		}
+		if (facing > 0) {
+			sprite_index = boy_right_jump
+		}
+	}
 }
