@@ -21,6 +21,9 @@ gravity_rev = false;
 
 lightning = false;
 
+health = 100
+mana = 100
+
 draw_healthbar(100, 100, 100, 100, 100, c_orange, c_red, c_green, 1, true, true);
 #macro HORIZONTAL_GROUND_FORCE_ON_KEY 1
 #macro HORIZONTAL_AIR_FORCE_ON_KEY 0.2
