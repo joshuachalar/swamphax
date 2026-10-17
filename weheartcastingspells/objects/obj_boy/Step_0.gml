@@ -1,8 +1,8 @@
 if (abs(velocity[0]) < VELOCITY_EPSILON) {
-	velocity[0] = 0.
+	velocity[0] = 0
 }
 if (abs(velocity[1]) < VELOCITY_EPSILON) {
-	velocity[1] = 0.
+	velocity[1] = 0
 }
 
 var dir = [
@@ -14,22 +14,13 @@ var dir = [
 var force = [0., 0.]
 
 if (dir[0] != 0) {
-	if (is_on_ground) {
-		force[0] += HORIZONTAL_GROUND_FORCE_ON_KEY * dir[0]
-	}
-	else {
-		force[0] += HORIZONTAL_AIR_FORCE_ON_KEY * dir[0]
-	}
+	force[0] += HORIZONTAL_FORCE_ON_KEY * dir[0]
 }
 
 if (is_on_ground && dir[1] == -1) {
 	force[1] -= VERTICAL_FORCE_ON_JUMP
+	force[0] *= HORIZONTAL_FORCE_BOOST_ON_JUMP_MULTIPLY 
 	force[0] += HORIZONTAL_FORCE_BOOST_ON_JUMP_ADD * sign(velocity[0])
-}
-if (slam_available && not is_on_ground && dir[1] == 1) {
-	force[1] += VERTICAL_FORCE_ON_SLAM
-	slam_available = false
-	in_slam = true
 }
 
 //wind
@@ -83,10 +74,6 @@ if (burn_timer > 0){
 
 force[1] += GRAVITY_FORCE * mass
 
-if (in_slam) {
-	force[0] *= HORIZONTAL_FORCE_DAMP_WHILE_SLAM_MULT	
-}
-
 var acceleration = [force[0] / mass, force[1] / mass]
 
 if (is_on_ground) {
@@ -106,8 +93,6 @@ if (collider) {
 	velocity[1] = 0
 	y = collider.y - sprite_height + 1;
 	is_on_ground = true
-	slam_available = true
-	in_slam = false
 }
 else {
 	is_on_ground = false	
