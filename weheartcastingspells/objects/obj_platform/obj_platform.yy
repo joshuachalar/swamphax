@@ -1,11 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"randomstarspawner",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_platform",
+  "eventList":[],
   "managed":true,
-  "name":"randomstarspawner",
+  "name":"obj_platform",
   "overriddenProperties":[],
   "parent":{
     "name":"objects",
@@ -29,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"Sprite3",
+    "path":"sprites/Sprite3/Sprite3.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

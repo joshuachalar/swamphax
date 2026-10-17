@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"stars_obj",
+  "%Name":"obj_boy",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":5,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"stars_obj",
+  "name":"obj_boy",
   "overriddenProperties":[],
   "parent":{
     "name":"objects",
@@ -31,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"stars_sprite",
-    "path":"sprites/stars_sprite/stars_sprite.yy",
+    "name":"boy_sprite",
+    "path":"sprites/boy_sprite/boy_sprite.yy",
   },
   "spriteMaskId":null,
   "visible":true,
