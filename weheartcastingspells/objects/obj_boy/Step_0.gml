@@ -16,7 +16,6 @@ var dir = [
 var force = [0., 0.]
 
 if (dir[0] != 0) {
-	force[0] += HORIZONTAL_FORCE_ON_KEY * dir[0]
 	facing = dir[0]
 }
 
