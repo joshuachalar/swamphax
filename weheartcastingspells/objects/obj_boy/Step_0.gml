@@ -104,26 +104,61 @@ else {
 
 velocity[1] += acceleration[1]
 
-x += velocity[0]
-y += velocity[1]
+var proposed_x = x + velocity[0]
+var proposed_y = y + velocity[1]
 
-var collider1 = instance_place(x, y + 1, obj_platform)
-var collider2 = instance_place(x, y + 1, obj_jump)
-if (collider1 || collider2) {
-	velocity[1] = 0
-	if (collider1){
-		y = collider1.y - sprite_height + 1;
-	}else{
-		y = collider2.y - sprite_height + 1;
+var vertical_collider = instance_place(x, proposed_y, [obj_platform, obj_jump])
+if (vertical_collider) {
+	if (proposed_y < vertical_collider.bbox_top) {
+		velocity[1] = 0
+		y = vertical_collider.y - sprite_height
+		is_on_ground = true
+		slam_available = true
+		in_slam = false
 	}
-	is_on_ground = true
-	slam_available = true
-	in_slam = false
+	else {
+		is_on_ground = false
+	}
 }
 else {
-	is_on_ground = false	
+	y = proposed_y
+	
+	is_on_ground = false
 }
 
+var horizontal_collider = instance_place(proposed_x, y, [obj_platform, obj_jump])
+if (horizontal_collider) {
+	if (proposed_x < horizontal_collider.bbox_left) {
+		velocity[0] = 0
+		x = horizontal_collider.x - sprite_width
+		is_on_ground = true
+		slam_available = true
+		in_slam = false
+	}
+	
+	// i thought this also needed another case (other side)
+	// but it works without it (:
+}
+else {
+	x = proposed_x
+}
+
+// OLD; IN CASE WE NEED IT: 
+//x += velocity[0]
+//y += velocity[1]
+
+//var vertical_collider = instance_place(x, y, [obj_platform, obj_jump])
+//if (vertical_collider) {
+//	// assumes collision is always player above block
+//	velocity[1] = 0
+//	y = vertical_collider.y - sprite_height
+//	is_on_ground = true
+//	slam_available = true
+//	in_slam = false
+//}
+//else {
+//	is_on_ground = false	
+//}
 
 if (not is_on_ground) {
 	if (velocity[0] < 0) {

@@ -10,8 +10,8 @@ var old_size = [
 ]
 
 var goal_position = [
-	42 * obj_boy.velocity[0] + obj_boy.x - old_size[0] / 2, 
-	20 * obj_boy.velocity[1] + obj_boy.y - old_size[1] / 2
+	32 * obj_boy.velocity[0] + obj_boy.x - old_size[0] / 2, 
+	15 * obj_boy.velocity[1] + obj_boy.y - old_size[1] / 2
 ]
 
 var goal_size = [
@@ -19,10 +19,20 @@ var goal_size = [
 	view_hport[1] / 1.7
 ]
 
-var new_position = [
-	lerp(old_position[0], goal_position[0], 0.06), 
-	lerp(old_position[1], goal_position[1], 0.02)
-]
+// holy moly; adjust if needed
+var new_position
+if (room == rm_start) {
+	new_position = [
+		clamp(lerp(old_position[0], goal_position[0], 0.06), 0, view_wport[0]), 
+		clamp(lerp(old_position[1], goal_position[1], 0.02), 0, view_hport[0])
+	]
+}
+else {
+	new_position = [
+		lerp(old_position[0], goal_position[0], 0.06), 
+		lerp(old_position[1], goal_position[1], 0.02)
+	]
+}
 
 var new_size = [
 	lerp(old_size[0], goal_size[0], 0.1), 
