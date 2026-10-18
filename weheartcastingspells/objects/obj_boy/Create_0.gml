@@ -1,5 +1,5 @@
 depth = -6767
-
+tower_tilemap = noone;
 move_speed = 10;
 normal_speed = move_speed;
 

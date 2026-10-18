@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tower_col_script",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tower_col_script",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

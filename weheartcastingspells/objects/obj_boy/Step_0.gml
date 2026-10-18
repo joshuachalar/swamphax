@@ -107,32 +107,31 @@ velocity[1] += acceleration[1]
 var proposed_x = x + velocity[0]
 var proposed_y = y + velocity[1]
 
-var vertical_collider = instance_place(x, proposed_y, [obj_platform, obj_jump])
-if (vertical_collider) {
-	if (proposed_y < vertical_collider.bbox_top) {
-		velocity[1] = 0
-		y = vertical_collider.y - sprite_height
-		
-		if (in_slam) {
-			facing = 0	
-		}
-		
-		is_on_ground = true
-		slam_available = true
-		in_slam = false
-	}
-	if ((proposed_y + sprite_height) > vertical_collider.bbox_bottom) {
-		velocity[1] = 0
-		y = vertical_collider.bbox_bottom
-	}
-	//else {
-	//	is_on_ground = false
-	//}
+var vertical_collider = instance_place(
+    x, proposed_y,
+    [obj_platform, obj_jump, obj_turn]
+);
+
+if (vertical_collider != noone) {
+    if (velocity[1] > 0) {
+        // Moving downward: land on top
+        y = vertical_collider.bbox_top - (bbox_bottom - y);
+        is_on_ground = true;
+        slam_available = true;
+        in_slam = false;
+
+        if (in_slam) facing = 0;
+    }
+    else if (velocity[1] < 0) {
+        // Moving upward: hit the underside
+        y = vertical_collider.bbox_bottom - (bbox_top - y);
+    }
+
+    velocity[1] = 0;
 }
 else {
-	y = proposed_y
-	
-	is_on_ground = false
+    y = proposed_y;
+    is_on_ground = false;
 }
 
 var horizontal_collider = instance_place(proposed_x, y, [obj_platform, obj_jump])
@@ -186,7 +185,17 @@ else {
 	}
 }
 
-if (y > 700){
-	x = 50
-	y = 350
+
+if (y > room_height + 100) {
+
+    var spawn = instance_find(obj_spawn, 0);
+
+    if (spawn != noone) {
+        x = spawn.x;
+        y = spawn.y;
+
+        velocity = [0, 0];
+        is_on_ground = false;
+        in_slam = false;
+    }
 }
