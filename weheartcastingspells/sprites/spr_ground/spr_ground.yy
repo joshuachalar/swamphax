@@ -3,7 +3,7 @@
   "%Name":"spr_ground",
   "bboxMode":0,
   "bbox_bottom":63,
-  "bbox_left":0,
+  "bbox_left":8,
   "bbox_right":63,
   "bbox_top":0,
   "collisionKind":1,
@@ -19,7 +19,7 @@
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"4697b99e-d697-43d7-bbaa-87309001b50d","blendMode":0,"displayName":"default","isLocked":false,"name":"4697b99e-d697-43d7-bbaa-87309001b50d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"23073fc8-a528-4113-b8a8-99976ee6e13e","blendMode":0,"displayName":"default","isLocked":false,"name":"23073fc8-a528-4113-b8a8-99976ee6e13e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_ground",
   "nineSlice":null,
