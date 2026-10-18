@@ -26,7 +26,6 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
   },
   "name":"weheartcastingspells",
   "resources":[
@@ -54,6 +53,7 @@
     {"id":{"name":"boy_left","path":"sprites/boy_left/boy_left.yy",},},
     {"id":{"name":"boy_right_jump","path":"sprites/boy_right_jump/boy_right_jump.yy",},},
     {"id":{"name":"boy_right","path":"sprites/boy_right/boy_right.yy",},},
+    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"boy_sprite","path":"sprites/boy_sprite/boy_sprite.yy",},},
     {"id":{"name":"spr_empty","path":"sprites/spr_empty/spr_empty.yy",},},
     {"id":{"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},},
@@ -65,6 +65,9 @@
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},},
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},},
     {"id":{"name":"ground_tileset","path":"tilesets/ground_tileset/ground_tileset.yy",},},
+    {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},},
+    {"id":{"name":"stars_sprite","path":"sprites/stars_sprite/stars_sprite.yy",},},
+    {"id":{"name":"trees_sprite","path":"sprites/trees_sprite/trees_sprite.yy",},},
     {"id":{"name":"hori_tileset","path":"tilesets/hori_tileset/hori_tileset.yy",},},
     {"id":{"name":"tower_tileset","path":"tilesets/tower_tileset/tower_tileset.yy",},},
   ],
@@ -74,6 +77,7 @@
     {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
     {"roomId":{"name":"rm_tower","path":"rooms/rm_tower/rm_tower.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
