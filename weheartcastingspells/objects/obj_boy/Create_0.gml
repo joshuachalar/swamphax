@@ -24,7 +24,8 @@ gravity_reg = false;
 gravity_rev = false;
 
 #macro STARTING_LIGHTNING_TIME (room_speed * 10)
-#macro LIGHTNING_HORIZONTAL_LENGTH 100
+#macro LIGHTNING_HORIZONTAL_LENGTH 100  // warning
+#macro LIGHTNING_REAL_HORIZONTAL_LENGTH 20  // actual stun
 #macro LIGHTNING_WARNING_TIME 3.1  // seconds? 
 lightning_timer = 0;
 future_lightning_locations = []
@@ -53,3 +54,6 @@ in_slam = false
 facing = 0  // 0 = forwards, -1 = left, 1 = right
 
 time_since_movement = 0
+
+#macro LIGHTNING_STUN_DURATION (room_speed * 1.)  // seconds? 
+stun_duration_left = 0

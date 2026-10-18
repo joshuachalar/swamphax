@@ -61,7 +61,12 @@ for (var i = 0; i < array_length(future_lightning_locations); ++i) {
 	future_lightning_locations[i].time_alive += delta_time
 	
 	if ((future_lightning_locations[i].time_alive / 1000000.) > LIGHTNING_WARNING_TIME) {
-		
+		if (
+			x > future_lightning_locations[i].location - LIGHTNING_REAL_HORIZONTAL_LENGTH &&
+			x < future_lightning_locations[i].location + LIGHTNING_REAL_HORIZONTAL_LENGTH
+		) {
+			stun_duration_left = LIGHTNING_STUN_DURATION
+		}
 		
 		array_delete(future_lightning_locations, i, 1)
 	}

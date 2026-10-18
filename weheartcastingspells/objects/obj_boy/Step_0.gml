@@ -8,11 +8,18 @@ if (abs(velocity[1]) < VELOCITY_EPSILON) {
 }
 show_show = place_meeting(x, y, obj_wizard);
 
-var dir = [
-	(keyboard_check(ord("D")) || keyboard_check(vk_right)) - (keyboard_check(ord("A")) || keyboard_check(vk_left)),
-	(keyboard_check(ord("S")) || keyboard_check(vk_down)) - (keyboard_check(ord("W")) || keyboard_check(vk_up))
-]
-// TD rename to key dir
+var dir;
+if (stun_duration_left > 0) {
+	dir = [0, 0]
+}
+else {
+	dir = [
+		(keyboard_check(ord("D")) || keyboard_check(vk_right)) - (keyboard_check(ord("A")) || keyboard_check(vk_left)),
+		(keyboard_check(ord("S")) || keyboard_check(vk_down)) - (keyboard_check(ord("W")) || keyboard_check(vk_up))
+	]
+}
+
+// TD rename to key dir; too late
 
 var force = [0., 0.]
 
@@ -37,6 +44,11 @@ if (slam_available && not is_on_ground && dir[1] == 1) {
 	force[1] += VERTICAL_FORCE_ON_SLAM
 	slam_available = false
 	in_slam = true
+}
+
+// temp stun
+if (keyboard_check(ord("V"))) {
+	stun_duration_left = LIGHTNING_STUN_DURATION
 }
 
 //wind
@@ -221,6 +233,15 @@ else {
 			sprite_index = boy_right_jump
 		}
 	}
+}
+
+if (stun_duration_left > 0) {
+	--stun_duration_left;
+	
+	image_blend = c_blue;
+}
+else {
+	image_blend = c_white;
 }
 
 
