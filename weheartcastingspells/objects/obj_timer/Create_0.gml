@@ -1,0 +1,1 @@
+countdown = room_speed * 45;
