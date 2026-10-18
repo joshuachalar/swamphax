@@ -112,13 +112,22 @@ if (vertical_collider) {
 	if (proposed_y < vertical_collider.bbox_top) {
 		velocity[1] = 0
 		y = vertical_collider.y - sprite_height
+		
+		if (in_slam) {
+			facing = 0	
+		}
+		
 		is_on_ground = true
 		slam_available = true
 		in_slam = false
 	}
-	else {
-		is_on_ground = false
+	if ((proposed_y + sprite_height) > vertical_collider.bbox_bottom) {
+		velocity[1] = 0
+		y = vertical_collider.bbox_bottom
 	}
+	//else {
+	//	is_on_ground = false
+	//}
 }
 else {
 	y = proposed_y
@@ -131,36 +140,27 @@ if (horizontal_collider) {
 	if (proposed_x < horizontal_collider.bbox_left) {
 		velocity[0] = 0
 		x = horizontal_collider.x - sprite_width
-		is_on_ground = true
-		slam_available = true
-		in_slam = false
 	}
-	
-	// i thought this also needed another case (other side)
-	// but it works without it (:
+	if ((proposed_x + sprite_width) > horizontal_collider.bbox_right) {
+		velocity[0] = 0
+		x = horizontal_collider.bbox_right
+	}
 }
 else {
 	x = proposed_x
 }
 
-// OLD; IN CASE WE NEED IT: 
-//x += velocity[0]
-//y += velocity[1]
+if (velocity[0] == 0 && velocity[1] == 0) {
+	time_since_movement += delta_time	
+}
+else {
+	time_since_movement = 0
+}
 
-//var vertical_collider = instance_place(x, y, [obj_platform, obj_jump])
-//if (vertical_collider) {
-//	// assumes collision is always player above block
-//	velocity[1] = 0
-//	y = vertical_collider.y - sprite_height
-//	is_on_ground = true
-//	slam_available = true
-//	in_slam = false
-//}
-//else {
-//	is_on_ground = false	
-//}
-
-if (not is_on_ground) {
+if (time_since_movement > (2. * 1000000)) {  // dt in us
+	sprite_index = boy_down
+}
+else if (not is_on_ground) {
 	if (velocity[0] < 0) {
 		sprite_index = boy_left_jump
 	}
@@ -185,7 +185,6 @@ else {
 		}
 	}
 }
-
 
 if (y > 700){
 	x = 50
