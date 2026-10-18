@@ -9,10 +9,19 @@ var old_size = [
 	camera_get_view_height(view_camera[0])
 ]
 
-var goal_position = [
-	32 * obj_boy.velocity[0] + obj_boy.x - old_size[0] / 2, 
-	15 * obj_boy.velocity[1] + obj_boy.y / 1.16 - old_size[1] / 2
-]
+var goal_position
+if (room == rm_tower) {
+	goal_position = [
+		32 * obj_boy.velocity[0] + obj_boy.x - old_size[0] / 2, 
+		15 * obj_boy.velocity[1] + obj_boy.y - old_size[1] / 2
+	]
+} 
+else {
+	goal_position = [
+		32 * obj_boy.velocity[0] + obj_boy.x - old_size[0] / 2, 
+		15 * obj_boy.velocity[1] + obj_boy.y / 1.16 - old_size[1] / 2
+	]
+}
 
 var goal_size = [
 	view_wport[0] / 1.7, 
