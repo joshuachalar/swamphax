@@ -9,8 +9,8 @@ if (abs(velocity[1]) < VELOCITY_EPSILON) {
 show_show = place_meeting(x, y, obj_wizard);
 
 var dir = [
-	keyboard_check(ord("D")) - keyboard_check(ord("A")),
-	keyboard_check(ord("S")) - keyboard_check(ord("W"))
+	(keyboard_check(ord("D")) || keyboard_check(vk_right)) - (keyboard_check(ord("A")) || keyboard_check(vk_left)),
+	(keyboard_check(ord("S")) || keyboard_check(vk_down)) - (keyboard_check(ord("W")) || keyboard_check(vk_up))
 ]
 // TD rename to key dir
 
