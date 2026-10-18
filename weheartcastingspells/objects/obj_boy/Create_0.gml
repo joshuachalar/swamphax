@@ -31,7 +31,6 @@ future_lightning_locations = []
 
 HORIZONTAL_GROUND_FORCE_ON_KEY = 2.5;
 HORIZONTAL_AIR_FORCE_ON_KEY = 0.2;
-health = 100
 mana = 0
 mana_cooldown = 0
 
