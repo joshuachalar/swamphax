@@ -11,17 +11,23 @@ jitter = 0;
 jitter_x = 0;
 jitter_y = 0;
 
+#macro STARTING_BURN_TIME (room_speed * 5)
 inAir = 0;
 burning = false;
 burn_timer = 0;
 
-wind = false;
-wind_timer = 30;
+#macro STARTING_WIND_TIME (room_speed * 5)
+#macro WIND_FORCE 1.3
+wind_timer = 0;
 
 gravity_reg = false;
 gravity_rev = false;
 
-lightning = false;
+#macro STARTING_LIGHTNING_TIME (room_speed * 10)
+#macro LIGHTNING_HORIZONTAL_LENGTH 100
+#macro LIGHTNING_WARNING_TIME 3.1  // seconds? 
+lightning_timer = 0;
+future_lightning_locations = []
 
 HORIZONTAL_GROUND_FORCE_ON_KEY = 2.5;
 HORIZONTAL_AIR_FORCE_ON_KEY = 0.2;

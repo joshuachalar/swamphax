@@ -41,21 +41,23 @@ if (slam_available && not is_on_ground && dir[1] == 1) {
 //wind
 
 if (keyboard_check(ord("Y"))){
-	wind_timer = room_speed * 5;
+	wind_timer = STARTING_WIND_TIME
 }
 
 if (wind_timer > 0) {
-    HORIZONTAL_GROUND_FORCE_ON_KEY = 0.9;
+    // HORIZONTAL_GROUND_FORCE_ON_KEY = 0.9;
     wind_timer--;
+	
+	force[0] -= WIND_FORCE;
 }
 else {
-    HORIZONTAL_GROUND_FORCE_ON_KEY = 2.5;
+    // HORIZONTAL_GROUND_FORCE_ON_KEY = 2.5;
 }
 
 //fire
 
 if (keyboard_check(ord("U"))){
-	burn_timer = room_speed * 5;
+	burn_timer = STARTING_BURN_TIME;
 	burning = true;
 	jitter_timer = 0;
 }
@@ -83,9 +85,24 @@ if (burn_timer > 0){
     }
 }
 
+// lightning
+
+if (keyboard_check(ord("L"))) {
+	lightning_timer = STARTING_LIGHTNING_TIME 
+	// future_lightning_locations = []
+}
 
 
-
+if (lightning_timer > LIGHTNING_WARNING_TIME) {
+	if (random(1.) < 0.06) {
+		var jazzy = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])
+		location = 2 * (random(jazzy) - jazzy / 4)
+		
+		array_push(future_lightning_locations, { location: location, time_alive: 0 })
+	}
+	
+	--lightning_timer;
+}
 
 force[1] += GRAVITY_FORCE * mass
 
