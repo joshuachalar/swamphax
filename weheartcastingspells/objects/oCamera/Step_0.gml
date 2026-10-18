@@ -19,7 +19,7 @@ if (room == rm_tower) {
 else {
 	goal_position = [
 		32 * obj_boy.velocity[0] + obj_boy.x - old_size[0] / 2, 
-		15 * obj_boy.velocity[1] + obj_boy.y / 1.16 - old_size[1] / 2
+		15 * obj_boy.velocity[1] + obj_boy.y / 1.35 - old_size[1] / 2
 	]
 }
 

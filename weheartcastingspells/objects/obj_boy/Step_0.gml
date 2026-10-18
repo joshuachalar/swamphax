@@ -124,6 +124,7 @@ velocity[1] += acceleration[1]
 
 var proposed_x = x + velocity[0]
 var proposed_y = y + velocity[1]
+var old_y = y
 
 var vertical_collider = instance_place(
     x, proposed_y,
@@ -152,6 +153,21 @@ else {
     is_on_ground = false;
 }
 
+var horizontal_collider = instance_place(proposed_x, old_y, [obj_platform, obj_jump, obj_tower_col])
+if (horizontal_collider) {
+	if (proposed_x < horizontal_collider.bbox_left) {
+		velocity[0] = 0
+		x = horizontal_collider.bbox_left - (bbox_right - x)
+	}
+	if ((proposed_x + sprite_width) > horizontal_collider.bbox_right) {
+		velocity[0] = 0
+		x = horizontal_collider.bbox_right - (bbox_left - x)
+	}
+}
+else {
+	x = proposed_x
+}
+
 if (mana_cooldown > 0) {
     mana_cooldown--;
 }
@@ -167,19 +183,8 @@ if (place_meeting(x, y, obj_potion) && mana_cooldown <= 0) {
     mana_cooldown = room_speed;
 }
 
-var horizontal_collider = instance_place(proposed_x, y, [obj_platform, obj_jump, obj_tower_col])
-if (horizontal_collider) {
-	if (proposed_x < horizontal_collider.bbox_left) {
-		velocity[0] = 0
-		x = horizontal_collider.x - sprite_width
-	}
-	if ((proposed_x + sprite_width) > horizontal_collider.bbox_right) {
-		velocity[0] = 0
-		x = horizontal_collider.bbox_right
-	}
-}
-else {
-	x = proposed_x
+if (instance_place(x, y, [obj_platform, obj_jump, obj_tower_col])) {
+	show_debug_message("THIS SHOULDN'T HAPPEN")	
 }
 
 if (velocity[0] == 0 && velocity[1] == 0) {
