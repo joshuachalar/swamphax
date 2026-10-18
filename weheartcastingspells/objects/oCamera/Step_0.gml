@@ -30,6 +30,12 @@ if (room == rm_start) {
 		clamp(new_position[1], 0, view_hport[0])
 	]
 }
+if (room == rm_main) {
+	new_position = [
+		clamp(new_position[0], 0, 5020 - 800), 
+		clamp(new_position[1], 0, view_hport[0])
+	]
+}
 
 var new_size = [
 	lerp(old_size[0], goal_size[0], 0.1), 
