@@ -26,7 +26,8 @@ lightning = false;
 HORIZONTAL_GROUND_FORCE_ON_KEY = 2.5;
 HORIZONTAL_AIR_FORCE_ON_KEY = 0.2;
 health = 100
-mana = 100
+mana = 0
+mana_cooldown = 0
 
 draw_healthbar(100, 100, 100, 100, 100, c_orange, c_red, c_green, 1, true, true);
 #macro VERTICAL_FORCE_ON_JUMP 12
