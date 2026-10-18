@@ -33,7 +33,7 @@ draw_healthbar(
 	mana, 
 	make_colour_rgb(0, 0, 0),  // discarded
 	make_colour_rgb(125, 125, 125), 
-	make_colour_rgb(0, 0, 255), 
+	make_colour_rgb(245, 243, 147), 
 	0, 
 	true, 
 	false

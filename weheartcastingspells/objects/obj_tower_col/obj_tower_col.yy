@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_t_col",
+    "path":"sprites/spr_t_col/spr_t_col.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

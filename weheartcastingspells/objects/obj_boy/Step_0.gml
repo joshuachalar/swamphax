@@ -126,7 +126,7 @@ var proposed_y = y + velocity[1]
 
 var vertical_collider = instance_place(
     x, proposed_y,
-    [obj_platform, obj_jump, obj_turn]
+    [obj_platform, obj_jump, obj_tower_col]
 );
 
 if (vertical_collider != noone) {
@@ -151,7 +151,22 @@ else {
     is_on_ground = false;
 }
 
-var horizontal_collider = instance_place(proposed_x, y, [obj_platform, obj_jump])
+if (mana_cooldown > 0) {
+    mana_cooldown--;
+}
+
+if (place_meeting(x, y, obj_potion) && mana_cooldown <= 0) {
+    with (obj_potion) {
+        if (place_meeting(x, y, other)) {
+            instance_destroy();
+        }
+    }
+	
+    mana += 10;
+    mana_cooldown = room_speed;
+}
+
+var horizontal_collider = instance_place(proposed_x, y, [obj_platform, obj_jump, obj_tower_col])
 if (horizontal_collider) {
 	if (proposed_x < horizontal_collider.bbox_left) {
 		velocity[0] = 0
