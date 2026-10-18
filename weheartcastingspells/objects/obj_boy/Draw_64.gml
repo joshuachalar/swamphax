@@ -21,6 +21,23 @@ function render_spell_warning(
     draw_set_valign(fa_top);
 }
 
+if (show_show = 1) {
+	if (mana < 50){
+	    draw_set_color(c_white);
+		draw_set_halign(fa_center);
+
+		draw_text(
+        display_get_gui_width() / 2,
+        display_get_gui_height() / 2,
+        "you are too weak. get more mana"
+		);
+	}else{
+		room_goto_next();
+	}
+
+    draw_set_halign(fa_left);
+}
+
 if (wind_timer > 0) {
     render_spell_warning("Wind!", wind_timer / STARTING_WIND_TIME)
 }

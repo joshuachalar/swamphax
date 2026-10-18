@@ -6,6 +6,7 @@ if (abs(velocity[0]) < VELOCITY_EPSILON) {
 if (abs(velocity[1]) < VELOCITY_EPSILON) {
 	velocity[1] = 0.
 }
+show_show = place_meeting(x, y, obj_wizard);
 
 var dir = [
 	keyboard_check(ord("D")) - keyboard_check(ord("A")),
