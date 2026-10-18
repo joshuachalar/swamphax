@@ -12,7 +12,7 @@ var gap_max = 399;
 var height_change = 80;
 
 // Generate until near the end of the room
-while (platform_x < room_width - 200) {
+while (platform_x < room_width - 650) {
 
     instance_create_layer(
         platform_x,
