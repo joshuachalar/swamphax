@@ -1,9 +1,9 @@
 draw_sprite_ext(sprite_index, image_index, floor(x), floor(y), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 
-#macro HEALTH_BAR_WIDTH (display_get_gui_width() * 0.15)
-#macro HEALTH_BAR_HEIGHT (display_get_gui_height() * 0.045)
-#macro HEALTH_BAR_LEFT (display_get_gui_width() * 0.05)
-#macro HEALTH_BAR_TOP (display_get_gui_height() * 0.92)
+#macro HEALTH_BAR_WIDTH (camera_get_view_width(view_camera[0]) * 0.15)
+#macro HEALTH_BAR_HEIGHT (camera_get_view_height(view_camera[0]) * 0.045)
+#macro HEALTH_BAR_LEFT (camera_get_view_width(view_camera[0]) * 0.05)
+#macro HEALTH_BAR_TOP (camera_get_view_height(view_camera[0]) * 0.92)
 
 draw_healthbar(
 	HEALTH_BAR_LEFT + camera_get_view_x(view_camera[0]), 
@@ -20,10 +20,10 @@ draw_healthbar(
 )
 
 
-#macro MANA_BAR_WIDTH (display_get_gui_width() * 0.15)
-#macro MANA_BAR_HEIGHT (display_get_gui_height() * 0.045)
-#macro MANA_BAR_LEFT (display_get_gui_width() * 0.05)
-#macro MANA_BAR_TOP (display_get_gui_height() * 0.84)
+#macro MANA_BAR_WIDTH (camera_get_view_width(view_camera[0]) * 0.15)
+#macro MANA_BAR_HEIGHT (camera_get_view_height(view_camera[0]) * 0.045)
+#macro MANA_BAR_LEFT (camera_get_view_width(view_camera[0]) * 0.05)
+#macro MANA_BAR_TOP (camera_get_view_height(view_camera[0]) * 0.84)
 
 draw_healthbar(
 	MANA_BAR_LEFT + camera_get_view_x(view_camera[0]), 

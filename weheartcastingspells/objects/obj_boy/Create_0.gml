@@ -1,3 +1,5 @@
+depth = -6767
+
 move_speed = 10;
 normal_speed = move_speed;
 
